@@ -2,4 +2,4 @@ I wrote a driver to access (GET) a webpage, scan the response for first occurren
 
 My purpose for writing the driver is practice with Groovy and HE, and creating a documented example. Maybe it’ll serve as a guide to how some of the driver basics work so other new user don’t need to sift through the documentation. It’s also an offshoot of other drivers I am working on. 
 
-The URL must be complete and exact including HTTP:// HTTPS:// (copy from browser address). The search string must be exact including case, spaces (copy from site’s webpage loaded in browser). Content created by webpage dynamic scripts will probably not be found by the driver. Create a virtual device from the driver to use in a tile.
+The URL must be complete and exact including HTTP:// HTTPS:// (copy from browser address). The search string must be unique and exact including case, spaces, special characters, etc. (copy from site’s webpage loaded in browser). Content created by webpage dynamic scripts will probably not be found by the driver. Create a virtual device from the driver to use in a tile.
