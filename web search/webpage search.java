@@ -33,11 +33,11 @@ metadata {
 	command "notpresent"        
     
 	//Adds "Current States" to device page. sendevent also required
-    attribute "searchstring", "string"
+	attribute "searchstring", "string"
 	attribute "searchstringfound", "bool"
 	attribute "searchstringfoundstr", "string"
 	attribute "updatedate", "string"
-    attribute "fulltext", "string"   
+	attribute "fulltext", "string"
 	}
 }
 
@@ -65,7 +65,7 @@ def asyncHTTPHandler(response, data) {
     
 	date = new Date()
     
-    String fulltext=searchstring+"<br>"+searchstringfoundstr+"<br>"+date.toString()
+	String fulltext=searchstring+"<br>"+searchstringfoundstr+"<br>"+date.toString()
     
 	if(enablelogging){
 		settings.each {name, value -> log.debug "${name}: ${value}"} //For input variables
@@ -73,7 +73,7 @@ def asyncHTTPHandler(response, data) {
 		log.debug "HTTP error: ${response.hasError()}"
 		log.debug "searchstringfound: ${searchstringfound}"
 		log.debug "searchstringfoundstr: ${searchstringfoundstr}"        
-        log.debug "fulltext: ${fulltext}"    
+		log.debug "fulltext: ${fulltext}"    
 		if(!response.hasError()){ //Catches bad URL
 			log.debug "response.data.length: ${response.data.length()}"
 			//log.debug "response.data ${response.data}" //Could be lengthy and fill Logs page
@@ -84,7 +84,7 @@ def asyncHTTPHandler(response, data) {
 	sendEvent(name:"searchstringfound", value:searchstringfound)
 	sendEvent(name:"searchstringfoundstr", value:searchstringfoundstr)
 	sendEvent(name:"updatedate", value:date.toString())
-    sendEvent(name:"fulltext", value:fulltext)
+	sendEvent(name:"fulltext", value:fulltext)
 }
 
 //Only a stub method
